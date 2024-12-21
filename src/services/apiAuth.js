@@ -1,15 +1,19 @@
 export async function login({ email, password }) {
   try {
-    const res = await fetch(`http://localhost:3000/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
+    const res = await fetch(
+      `http://localhost:3000/login`,
+
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
 
     if (!res.ok) {
       throw new Error(`Request failed with status: ${res.status}`);

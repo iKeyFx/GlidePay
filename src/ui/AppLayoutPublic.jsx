@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const AppLayout = styled.div`
   display: grid;
+  grid-template-rows: auto 1fr auto;
   height: 100dvh;
 
   @media (max-width: 992px) {
