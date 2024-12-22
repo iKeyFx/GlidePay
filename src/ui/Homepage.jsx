@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import HeaderPublic from "./HeaderPublic";
 import HomeMain from "./HomeMain";
-import Footer from "./Footer";
 import Login from "../features/authentication/Login";
 
 const StyledMain = styled.main`

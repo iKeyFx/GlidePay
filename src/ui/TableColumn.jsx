@@ -59,10 +59,6 @@ const Empty = styled.div`
 `;
 
 function TableColumn({ data, isPending }) {
-  // Safely check if `data` exists and is an array
-  //   if ((!data && !isPending) || !Array.isArray(data) || data.length === 0) {
-  //     return <Empty>No recent Transaction</Empty>;
-  //   }
   if (!data && !isPending) {
     return <Empty>No recent Transaction</Empty>;
   }

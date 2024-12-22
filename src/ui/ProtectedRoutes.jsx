@@ -28,7 +28,6 @@ function ProtectedRoute({ children }) {
   useEffect(() => {
     if (!isPending) {
       if (!user || user.success !== true) {
-        // If not authenticated, logout and redirect
         handleLogout();
       } else {
         setIsAuthenticated(true);
@@ -37,7 +36,7 @@ function ProtectedRoute({ children }) {
 
     const onStorageChange = (event) => {
       if (event.key === "authToken" && !event.newValue) {
-        handleLogout(); // Log out if the token is removed
+        handleLogout();
       }
     };
 
@@ -49,15 +48,12 @@ function ProtectedRoute({ children }) {
   }, [isPending, user, queryClient, navigate]);
 
   if (isPending || !isAuthenticated) {
-    // Optionally return null or a loading spinner while the check is running
     return (
       <FullPage>
         <Spinner />
       </FullPage>
     );
   }
-
-  // Render the children if authenticated
   return children;
 }
 

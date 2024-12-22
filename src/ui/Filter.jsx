@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { login } from "../services/apiAuth";
 import { useSearchParams } from "react-router";
 
 const StyledFilter = styled.div`

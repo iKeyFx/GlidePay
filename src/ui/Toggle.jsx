@@ -26,7 +26,6 @@ const ToggleSwitch = styled.div`
   border-radius: 25px;
   position: relative;
   transition: background-color 0.3s ease;
-  /* margin-left: 15px; */
 `;
 const ToggleSlider = styled.div`
   width: 20px;

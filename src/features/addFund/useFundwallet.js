@@ -11,13 +11,12 @@ export function useFundwallet() {
   const {
     mutate: fundWalletHandler,
     error,
-    isPending, // React Query provides isLoading, not isPending
+    isPending,
   } = useMutation({
     mutationFn: (fundingAmount) => fundWallet({ token, fundingAmount }),
 
     onSuccess: (response) => {
       const { paymentLink } = response;
-      //   console.log(paymentLink);
       window.location.href = paymentLink;
     },
 

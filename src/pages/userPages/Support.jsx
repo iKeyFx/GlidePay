@@ -19,7 +19,6 @@ const StyledSupport = styled.div`
     grid-template-columns: 1fr;
     align-items: self-start;
     grid-template-rows: 3rem 1fr;
-    /* min-height: 100%; */
   }
 `;
 
@@ -61,7 +60,6 @@ const StyledSearchIcon = styled.span`
 const StyledTextCon = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   background-color: var(--color-light-grey);
   padding: 10px;
   border-radius: 10px;

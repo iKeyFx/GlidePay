@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
 import { useBalance } from "./useBalance";
+import { HOLDING_FEE } from "../../utils/constant";
 
 const StyledBalance = styled.div`
-  /* display: flex;
-  justify-content: space-between; */
-  /* padding: 15px 30px; */
   background-color: var(--color-white-off);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -43,6 +41,7 @@ const StyledBalanceP = styled.p`
     font-size: 1.6rem;
   }
 `;
+
 function Balance() {
   const { walletBalance, isPending } = useBalance();
   const balance = walletBalance?.result;
@@ -62,11 +61,11 @@ function Balance() {
 
       <StyledB>
         <StyledBalanceH5>Availabe Balance</StyledBalanceH5>
-        <StyledBalanceP>{formatCurrency(3000)}</StyledBalanceP>
+        <StyledBalanceP>{formatCurrency(balance - HOLDING_FEE)}</StyledBalanceP>
       </StyledB>
       <StyledB>
         <StyledBalanceH5>Pending Balance</StyledBalanceH5>
-        <StyledBalanceP>{formatCurrency(4000)}</StyledBalanceP>
+        <StyledBalanceP>{formatCurrency(0)}</StyledBalanceP>
       </StyledB>
     </StyledBalance>
   );

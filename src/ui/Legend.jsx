@@ -22,7 +22,6 @@ const TextColor = styled.span`
 function Legend({ chartData }) {
   const totalIn = chartData[0].value;
   const totalOut = chartData[1].value;
-  // console.log(totalIn, totalOut);
   return (
     <LegendContainer>
       <div>

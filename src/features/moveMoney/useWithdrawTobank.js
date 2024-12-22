@@ -22,7 +22,6 @@ export function useWithdrawToBank() {
 
     onSuccess: () => {
       navigate("/dashboard");
-      //   console.log("Login Successfully");
       toast.success("Fund Withdraw Successfully");
     },
 

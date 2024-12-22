@@ -47,7 +47,6 @@ const MobileShow = styled.div`
 
 function History() {
   const { data, isPending } = useHistoryFull();
-  // const { data, isPending } = useHistory();
   const [searchParams] = useSearchParams();
 
   const moveTest = searchParams.get("page");

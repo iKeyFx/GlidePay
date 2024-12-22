@@ -12,6 +12,5 @@ export function useHistoryFull() {
     queryFn: () => getUserhistoryFull({ token, page }),
   });
 
-  //   console.log(data);
   return { data, isPending };
 }

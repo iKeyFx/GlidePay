@@ -5,7 +5,6 @@ const Label = styled.div`
 `;
 
 const StyledFormError = styled.span`
-  /* display: grid; */
   color: var(--color-red-700);
   margin-bottom: 10px;
 `;

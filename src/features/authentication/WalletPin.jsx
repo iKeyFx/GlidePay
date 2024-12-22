@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "../../ui/Button";
 import Input from "../../ui/Input";
 import { useSetPin } from "./useSetPin";
+import SpinnerMini from "../../ui/SpinnerMini";
 const StyledSetPin = styled.div`
   margin-top: 4rem;
 `;
@@ -32,7 +33,7 @@ const WalletDiv = styled.div`
 function WalletPin() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors } = formState;
-  const { mutate: setPinLogic, isPending, error } = useSetPin();
+  const { mutate: setPinLogic, isPending } = useSetPin();
 
   function handleOnSubmit({ Pin, confirmPin }) {
     console.log({ Pin, confirmPin });
@@ -55,6 +56,7 @@ function WalletPin() {
             <Input
               type="number"
               id="Pin"
+              disabled={isPending}
               {...register("Pin", {
                 required: "Please enter your 4 digit pin",
                 minLength: {
@@ -74,9 +76,8 @@ function WalletPin() {
           <FormRow label="Confirm Pin" error={errors?.confirmPin?.message}>
             <Input
               type="number"
-              //   autoComplete="new-password"
               id="confirmPin"
-              //   disabled={isUpdating}
+              disabled={isPending}
               {...register("confirmPin", {
                 required: "This field is required",
                 validate: (value) =>
@@ -95,7 +96,9 @@ function WalletPin() {
           >
             Cancel
           </Button>
-          <Button sizes="medium">Set Pin</Button>
+          <Button sizes="medium">
+            {isPending ? <SpinnerMini /> : "  Set Pin"}
+          </Button>
         </Buttons>
       </Form>
     </StyledSetPin>

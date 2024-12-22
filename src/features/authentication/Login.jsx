@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Input from "../../ui/Input";
 import { Link } from "react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 import Button from "../../ui/Button";
@@ -44,8 +44,6 @@ const StyledSignUpText = styled(Link)`
 
 const Form = styled.form``;
 function Login() {
-  // const email = "usmansalami@gmail.com";
-  // const password = "p@55word";
   const { loginTest, isPending } = useLogin();
   const [email, setEmail] = useState("usmansalami@gmail.com");
   const [password, setPassword] = useState("p@55word");

@@ -21,7 +21,6 @@ export async function login({ email, password }) {
 
     const data = await res.json();
     return data;
-    // console.log(data);
   } catch (error) {
     console.error("Error during login:", error.message);
     throw new Error("Failed to login");
@@ -67,8 +66,8 @@ export async function getCurrentUser(token) {
   if (!res.ok) {
     throw new Error(`Failed to fetch profile: ${res.statusText}`);
   }
-
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function setWalletPin({ token, Pin, confirmPin }) {
@@ -89,7 +88,6 @@ export async function setWalletPin({ token, Pin, confirmPin }) {
     throw new Error(`Failed to set pin: ${res.statusText}`);
   }
 
-  const data = await res;
-  console.log(data);
-  // return res.json();
+  const data = await res.json();
+  return data;
 }

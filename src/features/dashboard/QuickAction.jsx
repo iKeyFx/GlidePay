@@ -8,7 +8,6 @@ const StyledOverView = styled.div`
   background-color: var(--color-white-off);
   padding: 1.4rem 2rem;
   border-top: 2px solid var(--color-cool-gray);
-  /* border-bottom: 2px solid var(--color-cool-gray); */
 
   @media (max-width: 640px) {
     display: none;

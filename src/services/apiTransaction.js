@@ -1,21 +1,18 @@
 export async function getUserhistory(token) {
-  const res = await fetch(
-    "http://localhost:3000/transactions?limit=7&page=1",
-    // `http://localhost:3000/transactions`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const res = await fetch("http://localhost:3000/transactions?limit=7&page=1", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
 
   if (!res.ok) {
     throw new Error(`Failed to history: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function getWalletBalance(token) {
@@ -31,7 +28,8 @@ export async function getWalletBalance(token) {
     throw new Error(`Failed to fetch profile: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function getBank(token) {
@@ -47,7 +45,8 @@ export async function getBank(token) {
     throw new Error(`Failed to fetch profile: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function getUserCharts({ token, filter }) {
@@ -66,14 +65,13 @@ export async function getUserCharts({ token, filter }) {
     throw new Error(`Failed to history: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function getUserhistoryFull({ token, page }) {
   const res = await fetch(
-    // `http://localhost:3000/transactions?limit=10&page=${page}`,
     `http://localhost:3000/transactions?limit=100&page=1`,
-    // `http://localhost:3000/transactions`,
     {
       method: "GET",
       headers: {
@@ -87,5 +85,6 @@ export async function getUserhistoryFull({ token, page }) {
     throw new Error(`Failed to history: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }

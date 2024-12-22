@@ -1,6 +1,27 @@
+import styled from "styled-components";
+
+const Header = styled.div`
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 640px) {
+    h3 {
+      font-size: 16px;
+    }
+
+    h4 {
+      font-size: 13px;
+    }
+
+    li {
+      font-size: 14px;
+    }
+  }
+`;
 function InstructAddFund() {
   return (
-    <div>
+    <Header>
       <h3>Add Money to Your Wallet</h3>
       <div>
         <h4>Follow the instructions below to add funds to your wallet:</h4>
@@ -13,7 +34,7 @@ function InstructAddFund() {
           </li>
         </ol>
       </div>
-    </div>
+    </Header>
   );
 }
 

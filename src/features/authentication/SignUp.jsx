@@ -9,12 +9,20 @@ const StyledSignUpCon = styled.div`
   margin: 2rem 2rem;
   padding: 5rem;
   background-color: var(--color-white-off);
+
+  @media (max-width: 640px) {
+    padding: 3rem;
+    margin: 1rem;
+  }
 `;
 
 const Input = styled.input`
   height: 2rem;
   font-size: 16px;
   padding: 2px;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const SignUpButton = styled.button`
@@ -22,8 +30,16 @@ const SignUpButton = styled.button`
   background-color: var(--color-teal);
   color: var(--color-white);
   border: 1px solid var(--color-teal);
+
   &:hover {
     background-color: var(--color-dark-teal);
+  }
+`;
+
+const Form = styled.form`
+  @media (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 function SignUp() {
@@ -41,7 +57,7 @@ function SignUp() {
   };
   return (
     <StyledSignUpCon>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <FormRow label="First Name" error={errors?.firstName?.message}>
           <Input
             type="text"
@@ -122,7 +138,7 @@ function SignUp() {
           />
         </FormRow>
         <SignUpButton>{!isPending ? "Sign Up" : <SpinnerMini />}</SignUpButton>
-      </form>
+      </Form>
     </StyledSignUpCon>
   );
 }

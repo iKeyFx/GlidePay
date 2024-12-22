@@ -6,6 +6,7 @@ const StyledCointainer = styled.div`
   margin: 1rem;
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 100%;
 `;
 
 function TransferFund() {

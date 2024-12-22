@@ -9,6 +9,5 @@ export function useHistory() {
     queryFn: () => getUserhistory(token),
   });
 
-  console.log(data);
   return { data, isPending };
 }

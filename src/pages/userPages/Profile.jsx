@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useUser } from "../../features/authentication/useUser";
 import styled from "styled-components";
 import WalletPin from "../../features/authentication/WalletPin";
@@ -10,10 +9,14 @@ const StyledProfileDetails = styled.div`
 `;
 
 const ProfileFull = styled.div`
-  margin: 2rem 10rem;
+  margin: 2rem;
 
   @media (max-width: 992px) {
     margin: 20px;
+  }
+  @media (max-width: 640px) {
+    margin: 10px;
+    padding: 0 10px;
   }
 `;
 
@@ -23,6 +26,10 @@ const ProfileDetails = styled.div`
   border-bottom: 1px solid var(--color-cool-gray);
   margin-bottom: 20px;
   cursor: pointer;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ProfileDetailsHead = styled.div`
@@ -33,6 +40,10 @@ const ProfileDetailsHead = styled.div`
 const UpdateText = styled.div`
   font-size: 1.5rem;
   margin-bottom: 10px;
+
+  @media (max-width: 640px) {
+    font-size: 1.2rem;
+  }
 `;
 
 function Profile() {
@@ -71,12 +82,3 @@ function Profile() {
 }
 
 export default Profile;
-
-{
-  /* <div>
-<h1>
-  Welcome, {user.result.first_name} {user.result.last_name}
-</h1>
-<p>Email: {user.result.email}</p>
-</div> */
-}

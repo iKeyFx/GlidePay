@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import Logo from "./Logo";
-import MainNav from "./MainNav";
-import Logout from "../features/authentication/Logout";
 import { IoCloseSharp } from "react-icons/io5";
 
 const OverlayContainer = styled.div`
@@ -56,9 +53,6 @@ function MenuOverLay({ isVisible, onClose, children }) {
           <IoCloseSharp />
         </CloseButton>
         {children}
-        {/* <Logo />
-        <MainNav onClose={onClose} />
-        <Logout /> */}
       </StyledSidebar>
     </OverlayContainer>
   );

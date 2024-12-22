@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 
 export function useOutsideClick(handler, listeningCapturing = true) {
-  //   const { close } = useContext(ModalContext);
   const ref = useRef();
 
   useEffect(

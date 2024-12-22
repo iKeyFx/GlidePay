@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { BiLogOut } from "react-icons/bi";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const StyledLogOut = styled.button`

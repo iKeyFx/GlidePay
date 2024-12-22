@@ -9,6 +9,7 @@ const AppLayout = styled.div`
   height: 100dvh;
 
   @media (max-width: 992px) {
+    height: 100vh;
     /* grid-template-rows: auto 20rem auto; */
   }
 `;

@@ -16,5 +16,4 @@ export function useCharts() {
   });
 
   return { data, isPending };
-  //   console.log(data);
 }

@@ -17,7 +17,6 @@ function PaymentPage() {
   const tx_id = searchparam.get("transaction_id");
 
   const { paymentVerify, error, isPending } = useVPayment();
-  // console.log(status, tx_ref, tx_id);
 
   if (!token) {
     console.error("Token is missing. Please log in.");
@@ -37,5 +36,3 @@ function PaymentPage() {
 }
 
 export default PaymentPage;
-
-// http://wallet/verify?status=successful&tx_ref=PID-FBJ4PV9EXU&transaction_id=8238151

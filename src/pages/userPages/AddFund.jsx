@@ -8,11 +8,15 @@ const StyledAddCon = styled.div`
   background-color: var(--color-white);
   padding: 4rem;
   height: 26rem;
+
+  @media (max-width: 640px) {
+    padding: 3rem;
+    height: 100dvh;
+  }
 `;
 
 const StyledMain = styled.div`
   display: grid;
-  /* justify-content: center; */
   gap: 0.8rem;
   line-height: 1.5;
 `;

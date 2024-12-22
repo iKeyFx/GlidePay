@@ -12,10 +12,21 @@ const Container = styled.div`
   padding: 3rem 3rem 1.5rem;
   position: relative;
   border-radius: 5px;
+  height: 100%;
+  overflow: hidden;
+  @media (max-width: 640px) {
+    padding: 1rem;
+  }
 `;
 
 const StyledInputCon = styled.form`
   display: grid;
+  flex: 1;
+  @media (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
 `;
 const StyledP2PHead = styled.div`
   line-height: 1.5;
@@ -65,6 +76,10 @@ export const Buttons = styled.div`
   gap: 1rem;
   justify-content: flex-end;
   margin-top: 0.6rem;
+
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+  }
 `;
 function FundTransfer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -171,9 +186,6 @@ function FundTransfer() {
           )}
         </StyledInputCon>
 
-        {/* <Button onClick={handleSubmit(onSubmit)} disabled={isPending}>
-          {isPending ? <SpinnerMini /> : "Send"}
-        </Button> */}
         <Buttons>
           <Button onClick={onClear} disabled={isPending} cancel="cancel">
             Clear

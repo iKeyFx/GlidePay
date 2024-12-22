@@ -12,7 +12,6 @@ export function useSignUp() {
 
     onSuccess: () => {
       navigate("/login", { replace: true });
-      //   console.log("Login Successfully");
       toast.success("New User Created Successfully");
     },
 

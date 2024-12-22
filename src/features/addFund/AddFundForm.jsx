@@ -13,11 +13,14 @@ const Label = styled.div`
 
 const StyledInput = styled.input`
   margin: 6px 0px;
-  /* width: 100%; */
   height: 2rem;
   font-size: 16px;
   padding: 5px;
   margin-bottom: 10px;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const StyledError = styled.span`
@@ -25,19 +28,13 @@ const StyledError = styled.span`
   color: var(--color-red-700);
 `;
 
-const StyledButton = styled.button`
-  color: var(--color-white);
-  background-color: var(--color-teal);
-  font-size: 0.8rem;
-  padding: 0.4rem 2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  text-align: center;
+const StyledButton = styled(Button)`
   border: none;
   width: 25%;
+  border-radius: 8px;
 
-  &:hover {
-    background-color: var(--color-dark-teal);
+  @media (max-width: 640px) {
+    width: 100%;
   }
 `;
 function AddFundForm() {
@@ -84,7 +81,8 @@ function AddFundForm() {
         {error ? <StyledError>{error}</StyledError> : ""}
       </div>{" "}
       <StyledButton
-        // sizes="small"
+        sizes="small"
+        variations="primary"
         disabled={!value || isPending || value <= 0}
         onClick={handleClick}
       >

@@ -1,10 +1,10 @@
 import { CiUser } from "react-icons/ci";
-import { HiOutlineMoon } from "react-icons/hi";
 import { NavLink } from "react-router";
 import styled from "styled-components";
 import SideBar from "./SideBarTab";
 import { useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
+import DarkModeToggle from "./DarkModeToggle";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -33,8 +33,6 @@ const StyledIcon = styled.div`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  /* margin: 10px; */
-
   &:hover {
     color: var(--color-teal);
   }
@@ -95,12 +93,9 @@ function HeaderUser() {
           </li>
 
           <li>
-            <StyledIcon>
-              <StyledNavLink>
-                <HiOutlineMoon />
-              </StyledNavLink>
-            </StyledIcon>
-            {/* <HiOutlineSun /> */}
+            <StyledNavLink>
+              <DarkModeToggle />
+            </StyledNavLink>
           </li>
         </StyledHeaderUl>
       </div>

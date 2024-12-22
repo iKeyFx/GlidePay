@@ -15,6 +15,12 @@ const Container = styled.div`
   position: relative;
   margin-top: 20px;
   border-radius: 5px;
+  height: 100%;
+  overflow: hidden;
+  @media (max-width: 640px) {
+    padding: 1rem;
+    height: auto;
+  }
 `;
 
 const StyledP2PHead = styled.div`
@@ -38,11 +44,7 @@ function Withdrawal() {
   const { register, formState, handleSubmit, reset } = useForm();
   const { errors } = formState;
   const { bankList, isPending } = useBanks();
-  const {
-    withdrawToBankData,
-    isPending: isPending2,
-    error,
-  } = useWithdrawToBank();
+  const { withdrawToBankData, isPending: isPending2 } = useWithdrawToBank();
 
   const data = bankList?.result;
 
@@ -172,29 +174,7 @@ function Withdrawal() {
             </div>
           </WalletPinOverLay>
         )}
-        {/* <FormSample label="Pin" error={errors?.pin?.message}>
-          <Input
-            type="number"
-            id="pin"
-            disabled={isPending2}
-            placeholder="Enter your wallet pin"
-            {...register("pin", {
-              required: "Please enter your 4 digit pin",
-              minLength: {
-                value: 4,
-                message: "Your pin is 4 Digit",
-              },
-              maxLength: {
-                value: 4,
-                message: "Pin doesn't exceed 4 digit",
-              },
-            })}
-          />
-        </FormSample> */}
       </StyledForm>
-      {/* <Button onClick={handleSubmit(handleWallet)} disabled={isPending2}>
-        {isPending2 ? <SpinnerMini /> : "Proceed"}
-      </Button> */}
       <Buttons>
         <Button onClick={onClear} cancel="cancel">
           Clear

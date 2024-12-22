@@ -46,7 +46,6 @@ function TableColumn({
 }) {
   const [searchParams] = useSearchParams();
 
-  // if (!history) return <PageNotFound />;
   if (isPending) return <Spinner />;
   const transactionsWithBalances = calculateBalancesReversed(
     history,

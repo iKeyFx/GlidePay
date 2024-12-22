@@ -51,7 +51,6 @@ function MainNav({ onClose }) {
           <StyledNavLink
             to="dashboard"
             {...(useActiveMatch("dashboard") ? { active: "true" } : {})}
-            // active={useActiveMatch("dashboard")}
             onClick={onClose}
           >
             <HiOutlineViewGrid />

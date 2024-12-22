@@ -15,7 +15,8 @@ export async function setWalletPin({ token, pin, confirm_pin }) {
     throw new Error(`Failed to set pin: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function fundWallet({ token, fundingAmount }) {
@@ -28,7 +29,6 @@ export async function fundWallet({ token, fundingAmount }) {
     body: JSON.stringify({
       amount: fundingAmount,
       frontend_base_url: "https://www.example.com",
-      // frontend_base_url: "http://localhost:5173",
     }),
   });
 
@@ -39,7 +39,8 @@ export async function fundWallet({ token, fundingAmount }) {
     );
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function verifyPayment({ token, status, tx_ref, tx_id }) {
@@ -58,7 +59,8 @@ export async function verifyPayment({ token, status, tx_ref, tx_id }) {
     throw new Error(`Failed to Verify Payment: ${res.statusText}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function walletTransfer({ token, amount, pin, userAddress }) {
@@ -82,7 +84,8 @@ export async function walletTransfer({ token, amount, pin, userAddress }) {
     );
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export async function withdrawToBank({
@@ -113,5 +116,6 @@ export async function withdrawToBank({
     );
   }
 
-  return res.json();
+  const data = await res.json();
+  return data;
 }

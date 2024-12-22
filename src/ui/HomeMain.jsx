@@ -4,9 +4,7 @@ const StyledGlideCon = styled.div`
   @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
-    /* gap: 1rem; */
     margin-bottom: 1rem;
   }
 `;

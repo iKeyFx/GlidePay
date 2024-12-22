@@ -16,7 +16,6 @@ export function useFundTransfer() {
 
     onSuccess: () => {
       navigate("/dashboard");
-      //   console.log("Login Successfully");
       toast.success("Fund Transfer Successfully");
     },
 
