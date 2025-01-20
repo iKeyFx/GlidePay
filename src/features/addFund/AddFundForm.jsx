@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useFundwallet } from "./useFundwallet";
 import styled from "styled-components";
 import Button from "../../ui/Button";
+import { getBank } from "../../services/apiTransaction";
+import { useBanks } from "../moveMoney/useBanks";
+import toast from "react-hot-toast";
 
 const Form = styled.form`
   display: grid;
@@ -21,6 +24,15 @@ const StyledInput = styled.input`
   @media (max-width: 640px) {
     width: 100%;
   }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;
 
 const StyledError = styled.span`
@@ -39,8 +51,9 @@ const StyledButton = styled(Button)`
 `;
 function AddFundForm() {
   const [value, setValue] = useState(0);
-  const { fundWalletHandler, isPending } = useFundwallet();
+  const { fundWalletHandler, isPending, error: error1 } = useFundwallet();
   const [error, setError] = useState("");
+  const { error: error2 } = useBanks();
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -63,6 +76,9 @@ function AddFundForm() {
 
   function handleClick(e) {
     e.preventDefault();
+    if (error2 !== "") {
+      toast.error("Set up your wallet PIN to proceed with transaction");
+    }
     fundWalletHandler(value);
   }
 
@@ -86,7 +102,7 @@ function AddFundForm() {
         disabled={!value || isPending || value <= 0}
         onClick={handleClick}
       >
-        {isPending ? "Please wait..." : `Add  ${value || "0"}`}
+        {isPending ? "Please wait..." : `Add  ${value ? value : ""}`}
       </StyledButton>
     </Form>
   );

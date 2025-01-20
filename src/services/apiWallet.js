@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 export async function setWalletPin({ token, pin, confirm_pin }) {
   const res = await fetch("http://localhost:3000/wallet/set-pin", {
     method: "POST",
@@ -33,12 +35,8 @@ export async function fundWallet({ token, fundingAmount }) {
   });
 
   if (!res.ok) {
-    const errorData = await res.json();
-    throw new Error(
-      `Failed to fund wallet: ${errorData.message || res.statusText}`
-    );
+    throw new Error(`Failed to Verify Payment: ${res.statusText}`);
   }
-
   const data = await res.json();
   return data;
 }

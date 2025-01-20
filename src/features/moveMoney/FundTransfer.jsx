@@ -6,6 +6,7 @@ import FormSample from "../../ui/FormSample";
 import SpinnerMini from "../../ui/SpinnerMini";
 import WalletPinOverLay from "./WalletPinOverLay";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Container = styled.div`
   background-color: var(--color-white);
@@ -97,6 +98,9 @@ function FundTransfer() {
         onSuccess: () => {
           reset();
         },
+        onError: (error) => {
+          // console.log(error);
+        },
       }
     );
   };
@@ -179,7 +183,7 @@ function FundTransfer() {
                   onClick={handleSubmit(onSubmit)}
                   disabled={isPending}
                 >
-                  {isPending ? <SpinnerMini /> : "Complete Transfer"}
+                  {isPending ? <SpinnerMini /> : "Withdraw"}
                 </ButtonComplete>
               </div>
             </WalletPinOverLay>

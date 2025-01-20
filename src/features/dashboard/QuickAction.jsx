@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../../ui/Button";
+import { useNavigate } from "react-router";
 
 const StyledOverView = styled.div`
   display: flex;
@@ -20,14 +21,24 @@ const StyledQuickButton = styled.div`
 `;
 
 function QuickAction() {
+  const navigate = useNavigate();
+
   return (
     <StyledOverView>
       <div>Overview</div>
       <StyledQuickButton>
-        <Button sizes="small" variations="primary">
+        <Button
+          sizes="small"
+          variations="primary"
+          onClick={() => navigate("/add-fund")}
+        >
           Add Fund
         </Button>
-        <Button sizes="small" variations="danger">
+        <Button
+          sizes="small"
+          variations="danger"
+          onClick={() => navigate("/move-fund")}
+        >
           Transfer
         </Button>
       </StyledQuickButton>

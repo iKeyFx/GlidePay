@@ -61,7 +61,9 @@ function Balance() {
 
       <StyledB>
         <StyledBalanceH5>Availabe Balance</StyledBalanceH5>
-        <StyledBalanceP>{formatCurrency(balance - HOLDING_FEE)}</StyledBalanceP>
+        <StyledBalanceP>
+          {!balance || isPending ? formatCurrency(0) : formatCurrency(balance)}
+        </StyledBalanceP>
       </StyledB>
       <StyledB>
         <StyledBalanceH5>Pending Balance</StyledBalanceH5>

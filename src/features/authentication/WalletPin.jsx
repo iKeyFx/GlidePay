@@ -61,11 +61,11 @@ function WalletPin() {
                 required: "Please enter your 4 digit pin",
                 minLength: {
                   value: 4,
-                  message: "Your pin is 4 Digit",
+                  message: "Your pin must be 4 digit",
                 },
                 maxLength: {
                   value: 4,
-                  message: "Pin doesn't exceed 4 digit",
+                  message: "Pin must not exceed 4 digit",
                 },
               })}
             />

@@ -19,8 +19,9 @@ export function useFundTransfer() {
       toast.success("Fund Transfer Successfully");
     },
 
-    onError: () => {
-      toast.error("can't complete transfer");
+    onError: (err) => {
+      console.log(err.message);
+      toast.error(err.message);
     },
   });
 

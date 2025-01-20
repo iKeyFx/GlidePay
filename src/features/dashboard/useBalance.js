@@ -13,5 +13,6 @@ export function useBalance() {
     queryFn: () => getWalletBalance(token),
   });
 
+  // console.log(error);
   return { walletBalance, isPending, error };
 }

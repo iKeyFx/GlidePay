@@ -98,7 +98,6 @@ function SettingsList({ active, handleActive, handleClick }) {
           </StyledIcon2>
         </StyledTextCon>
         <StyledTextCon
-          disabled
           active={active === "Security Settings"}
           onClick={() => {
             handleActive("Security Settings");
@@ -112,8 +111,7 @@ function SettingsList({ active, handleActive, handleClick }) {
           <div>
             <p>Security Settings</p>
             <span>
-              Password Management, Two-Factor Authentication (2FA), Active
-              Sessions
+              Pin Management, Two-Factor Authentication (2FA), Active Sessions
             </span>
           </div>
 

@@ -64,7 +64,7 @@ function MainNav({ onClose }) {
             {...(useActiveMatch("move-fund") ? { active: "true" } : {})}
           >
             <FaMoneyBillTransfer />
-            <span>Move Fund</span>
+            <span>Transfer Fund</span>
           </StyledNavLink>
         </li>
         <li>
