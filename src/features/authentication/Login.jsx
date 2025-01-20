@@ -45,8 +45,8 @@ const StyledSignUpText = styled(Link)`
 const Form = styled.form``;
 function Login() {
   const { loginTest, isPending } = useLogin();
-  const [email, setEmail] = useState("usmansalami@gmail.com");
-  const [password, setPassword] = useState("p@55word");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleClick(e) {
     e.preventDefault();
